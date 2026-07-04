@@ -32,7 +32,7 @@ For Edge, ChatGPT, or any website, use this priority order:
 4. **Visible user Edge**: use screenshots, clipboard paste, and safe clicks when the existing logged-in browser state is needed.
 5. **Manual checkpoint**: stop for login, CAPTCHA, payment, account changes, permission prompts, or destructive actions.
 
-For known apps/sites, check `references/software-profiles.md` and load only the matching profile section.
+For known apps/sites, check `references/software-profiles.md` and load only the matching profile file under `references/software-profiles/`.
 
 ## Core Loop
 
@@ -84,7 +84,7 @@ Recommended pattern on Windows:
 
 ## Reusable App/Site Lessons
 
-When a newly explored website or app becomes repeatable, add or propose a short profile update in `references/software-profiles.md`. Record only durable lessons:
+When a newly explored website or app becomes repeatable, add or propose a short profile file under `references/software-profiles/` and list it in `references/software-profiles.md`. Record only durable lessons:
 
 - stable landmarks and visible state labels;
 - best interface choice: API, CLI, HTML fetch, DOM, Playwright, CDP, UIA, or screenshot;
@@ -100,7 +100,8 @@ Load only the reference needed for the current target:
 
 - `references/windows-ui-recipes.md`: Windows screenshot, foreground, click, paste, key, and verification snippets.
 - `references/web-page-interfaces.md`: structured browser, HTML, DOM, assets, scraping, and Edge/CDP strategy.
-- `references/software-profiles.md`: maintained profiles for Edge/ChatGPT, GitHub, Kaggle, Luogu, Adobe Premiere Pro, and the format for adding more app/site lessons.
+- `references/software-profiles.md`: index of maintained app/site profiles and the rule for adding more profile files.
+- `references/software-profiles/*.md`: target-specific lessons for Edge/ChatGPT, GitHub, Kaggle, Luogu, Adobe Premiere Pro, and new app/site templates.
 - `references/tooling-landscape.md`: when to use DOM, accessibility tree, UI Automation, image matching, or coordinates.
 - `references/maintenance.md`: how to update this skill after a new UI workflow is learned.
 

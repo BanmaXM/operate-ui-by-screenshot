@@ -20,7 +20,7 @@ The skill helps an agent operate apps and websites through a cautious, evidence-
 - Stop at sensitive checkpoints such as passwords, 2FA, CAPTCHA, payment, destructive actions, account/security changes, and ambiguous permission prompts.
 - Reuse known app/site profiles, and summarize durable lessons after exploring a new app or website.
 
-If a multimodal agent can inspect visual state and use basic UI tools, this skill can be extended to more websites and desktop software by adding small operation notes in `references/software-profiles.md`.
+If a multimodal agent can inspect visual state and use basic UI tools, this skill can be extended to more websites and desktop software by adding small operation profiles under `references/software-profiles/`.
 
 ### Why It Matters
 
@@ -36,6 +36,13 @@ operate-ui-by-screenshot/
   references/
     maintenance.md
     software-profiles.md
+    software-profiles/
+      adobe-premiere-pro.md
+      edge-chatgpt.md
+      github.md
+      kaggle.md
+      luogu.md
+      new-site-profile-template.md
     tooling-landscape.md
     web-page-interfaces.md
     windows-ui-recipes.md
@@ -55,9 +62,18 @@ operate-ui-by-screenshot/
     send_keys.ps1
 ```
 
-### Reusable App/Site Lessons
+### Reusable App/Site Profiles
 
-`references/software-profiles.md` stores short profiles for known apps and websites, including Edge/ChatGPT, GitHub, Kaggle, Luogu, and Adobe Premiere Pro.
+`references/software-profiles.md` is the profile index. App/site-specific operation notes live under `references/software-profiles/`.
+
+Current profiles include:
+
+- Microsoft Edge + ChatGPT
+- GitHub
+- Kaggle
+- Luogu
+- Adobe Premiere Pro
+- New app/site profile template
 
 When the agent explores a new app or website, it can summarize durable operation lessons:
 
@@ -153,7 +169,7 @@ $SkillRoot = "$env:USERPROFILE\.codex\skills\operate-ui-by-screenshot"
 
 这是一个用于 Codex 的 UI 操作 skill，目标是让 agent 在操作桌面软件和网页时更加谨慎、可验证、可追溯。它不是单纯的“截图点按钮”工具，而是一个面向 GUI/Web agent 的可复用操作层：优先使用 API、CLI、浏览器 DOM、HTML 抓取、Playwright locator、CDP、UI Automation 等结构化接口；只有在没有更可靠接口时，才退回到截图驱动的可见 UI 操作。
 
-只要多模态 agent 能观察屏幕状态并调用基本 UI 工具，这个 skill 的流程就可以迁移到更多网站和桌面软件。新的经验不需要写成庞大的文档，只要沉淀到 `references/software-profiles.md` 里，记录稳定入口、页面标志、安全动作、验证截图和停止条件即可。
+只要多模态 agent 能观察屏幕状态并调用基本 UI 工具，这个 skill 的流程就可以迁移到更多网站和桌面软件。新的经验不需要写成庞大的文档，可以沉淀为 `references/software-profiles/` 下的小 profile，并由 `references/software-profiles.md` 做索引。
 
 ### 它解决什么问题
 
@@ -175,9 +191,20 @@ GUI 操作类任务常见风险包括：
 5. 每个关键动作后截图验证；
 6. 遇到密码、2FA、CAPTCHA、支付、删除、账号安全、权限授权等场景立即停止。
 
-### 新网站/软件经验沉淀
+### 可复用网站/软件 Profile
 
-当一个新网站或软件的工作流被探索清楚后，可以在 `references/software-profiles.md` 里增加一个简短 profile。建议记录：
+`references/software-profiles.md` 是 profile 索引。具体网站/软件的操作经验放在 `references/software-profiles/` 目录下。
+
+当前包含：
+
+- Microsoft Edge + ChatGPT
+- GitHub
+- Kaggle
+- Luogu
+- Adobe Premiere Pro
+- 新网站/软件 profile 模板
+
+当一个新网站或软件的工作流被探索清楚后，可以新增一个简短 profile。建议记录：
 
 - 启动方式或入口 URL；
 - 稳定页面标志和关键控件；
@@ -242,7 +269,8 @@ Use $operate-ui-by-screenshot to operate this app or website with structured int
 - `agents/openai.yaml`：Codex UI 中展示 skill 的元数据。
 - `references/windows-ui-recipes.md`：Windows 截图、聚焦窗口、点击、粘贴、滚动等操作模板。
 - `references/web-page-interfaces.md`：网页、Edge、DOM、HTML fetch、CDP 和可见浏览器操作策略。
-- `references/software-profiles.md`：常见软件/网站 profile，以及新增 profile 的格式。
+- `references/software-profiles.md`：常见软件/网站 profile 的索引和新增 profile 规则。
+- `references/software-profiles/`：拆分后的具体网站/软件 profile，例如 ChatGPT、GitHub、Kaggle、Luogu、Premiere，以及新网站模板。
 - `references/tooling-landscape.md`：DOM、UIA、截图、坐标点击等工具选择建议。
 - `references/maintenance.md`：如何维护和扩展这个 skill。
 - `scripts/`：可复用的 PowerShell / Node 辅助脚本。
