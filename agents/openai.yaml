@@ -1,0 +1,7 @@
+interface:
+  display_name: "Screenshot UI Operator"
+  short_description: "Operate apps and sites with APIs, DOM, UIA, and screenshots."
+  default_prompt: "Use $operate-ui-by-screenshot to operate this app or website with structured interfaces first, then safe screenshot-based UI actions when needed."
+
+policy:
+  allow_implicit_invocation: true
