@@ -1,6 +1,6 @@
 # operate-ui-by-screenshot
 
-Codex skill for cautious operation of desktop apps and websites. It is not only a screenshot-clicking helper: it is a reusable operating layer for GUI/web agents that can combine structured browser interfaces, DOM/HTML inspection, UI Automation, screenshots, visible state checks, clipboard paste, safe clicks, and verification screenshots.
+Codex skill for cautious operation of desktop apps and websites. It is not only a screenshot-clicking helper: it is a reusable operating layer for GUI/web agents that can combine structured browser interfaces, DOM/HTML inspection, UI Automation, screenshots, visible state checks, clipboard paste, safe clicks, verification screenshots, and profile-level self-optimization after new app/site exploration.
 
 中文说明见下方：[中文说明](#中文说明)。
 
@@ -167,7 +167,7 @@ $SkillRoot = "$env:USERPROFILE\.codex\skills\operate-ui-by-screenshot"
 
 ## 中文说明
 
-这是一个用于 Codex 的 UI 操作 skill，目标是让 agent 在操作桌面软件和网页时更加谨慎、可验证、可追溯。它不是单纯的“截图点按钮”工具，而是一个面向 GUI/Web agent 的可复用操作层：优先使用 API、CLI、浏览器 DOM、HTML 抓取、Playwright locator、CDP、UI Automation 等结构化接口；只有在没有更可靠接口时，才退回到截图驱动的可见 UI 操作。
+这是一个用于 Codex 的 UI 操作 skill，目标是让 agent 在操作桌面软件和网页时更加谨慎、可验证、可追溯。它不是单纯的“截图点按钮”工具，而是一个面向 GUI/Web agent 的可复用操作层：优先使用 API、CLI、浏览器 DOM、HTML 抓取、Playwright locator、CDP、UI Automation 等结构化接口；只有在没有更可靠接口时，才退回到截图驱动的可见 UI 操作。它还支持 profile 级自优化：探索新网站或软件后，可以把稳定入口、页面标志、安全动作、验证方式和失败恢复规则总结成可继续优化的小 profile。
 
 只要多模态 agent 能观察屏幕状态并调用基本 UI 工具，这个 skill 的流程就可以迁移到更多网站和桌面软件。新的经验可以在探索后自动总结为 `references/software-profiles/` 下的可优化小 profile，并由 `references/software-profiles.md` 做索引。
 
