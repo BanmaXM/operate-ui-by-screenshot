@@ -17,7 +17,7 @@ jobs:
       - name: Validate SKILL.md frontmatter
         shell: pwsh
         run: |
-          python - <<'PY'
+          @'
           from pathlib import Path
           import re
           p = Path("SKILL.md")
@@ -41,7 +41,7 @@ jobs:
           if not re.fullmatch(r"[a-z0-9-]+", values["name"]):
               raise SystemExit("frontmatter name must use lowercase letters, digits, and hyphens")
           print("SKILL.md frontmatter OK")
-          PY
+          '@ | python -
 
       - name: Check PowerShell scripts parse
         shell: pwsh
