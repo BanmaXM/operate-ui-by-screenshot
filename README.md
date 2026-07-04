@@ -20,7 +20,7 @@ The skill helps an agent operate apps and websites through a cautious, evidence-
 - Stop at sensitive checkpoints such as passwords, 2FA, CAPTCHA, payment, destructive actions, account/security changes, and ambiguous permission prompts.
 - Reuse known app/site profiles, and summarize durable lessons after exploring a new app or website.
 
-If a multimodal agent can inspect visual state and use basic UI tools, this skill can be extended to more websites and desktop software by adding small operation profiles under `references/software-profiles/`.
+If a multimodal agent can inspect visual state and use basic UI tools, this skill can be extended to more websites and desktop software. New experience can be automatically summarized after exploration into optimizable small profiles under `references/software-profiles/`, indexed by `references/software-profiles.md`.
 
 ### Why It Matters
 
@@ -169,7 +169,7 @@ $SkillRoot = "$env:USERPROFILE\.codex\skills\operate-ui-by-screenshot"
 
 这是一个用于 Codex 的 UI 操作 skill，目标是让 agent 在操作桌面软件和网页时更加谨慎、可验证、可追溯。它不是单纯的“截图点按钮”工具，而是一个面向 GUI/Web agent 的可复用操作层：优先使用 API、CLI、浏览器 DOM、HTML 抓取、Playwright locator、CDP、UI Automation 等结构化接口；只有在没有更可靠接口时，才退回到截图驱动的可见 UI 操作。
 
-只要多模态 agent 能观察屏幕状态并调用基本 UI 工具，这个 skill 的流程就可以迁移到更多网站和桌面软件。新的经验不需要写成庞大的文档，可以沉淀为 `references/software-profiles/` 下的小 profile，并由 `references/software-profiles.md` 做索引。
+只要多模态 agent 能观察屏幕状态并调用基本 UI 工具，这个 skill 的流程就可以迁移到更多网站和桌面软件。新的经验可以在探索后自动总结为 `references/software-profiles/` 下的可优化小 profile，并由 `references/software-profiles.md` 做索引。
 
 ### 它解决什么问题
 
