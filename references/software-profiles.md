@@ -1,6 +1,12 @@
 # Software Profiles
 
-Add one profile per app or website. Keep each profile short and operational: launch, stable landmarks, common actions, and risk checkpoints.
+Add one profile per app or website. Keep each profile short and operational: launch, stable landmarks, interface strategy, common actions, verification screenshots, and risk checkpoints.
+
+## New App/Site Lesson Capture
+
+When an unfamiliar app/site workflow becomes repeatable, add a short profile below using the same format. Preserve only stable landmarks, the best interface choice, common safe actions, verification expectations, stop conditions, and reusable recovery rules.
+
+Do not preserve secrets, cookies, tokens, passwords, private user data, screenshots with private content, or one-off coordinates.
 
 ## Profile Format
 
@@ -9,10 +15,12 @@ Add one profile per app or website. Keep each profile short and operational: lau
 
 - Launch:
 - Stable landmarks:
+- Interface strategy:
 - Common actions:
 - Preferred input method:
 - Verification screenshots:
 - Stop conditions:
+- Reusable lessons:
 - Notes:
 ```
 
@@ -34,7 +42,8 @@ Add one profile per app or website. Keep each profile short and operational: lau
   - `edge_chatgpt_attempt_screen1.png`: page loaded and prompt box visible.
   - `edge_chatgpt_attempt_screen2.png`: user message and response visible.
 - Stop conditions: login prompt, CAPTCHA, subscription/payment prompt, account/security settings, export/delete/share decisions unless explicitly requested.
-- Notes: Current normal Edge may not expose a remote debugging port. Do not assume existing tabs can be scraped through CDP. Use screenshots for logged-in visible Edge, and use in-app Browser or a separate debug Edge for structured page inspection. Model and reasoning controls can move; capture the menu open state before choosing, then capture the composer after selection.
+- Reusable lessons: model and reasoning controls can move; capture the menu open state before choosing, then capture the composer after selection.
+- Notes: Current normal Edge may not expose a remote debugging port. Do not assume existing tabs can be scraped through CDP. Use screenshots for logged-in visible Edge, and use in-app Browser or a separate debug Edge for structured page inspection.
 
 ## GitHub
 
@@ -53,7 +62,8 @@ Add one profile per app or website. Keep each profile short and operational: lau
   - `Private` selected before creation.
   - Result page shows `<owner>/<repo>` and `Private` badge.
 - Stop conditions: 2FA, passkey prompts, OAuth permission grants not clearly requested, organization policy prompts, billing prompts, destructive settings.
-- Notes: Public API does not list private repositories without authentication. Do not infer that a private repo is missing just because a public API returns `[]`.
+- Reusable lessons: public API does not list private repositories without authentication; do not infer that a private repo is missing just because a public API returns `[]`.
+- Notes: Check owner/name/visibility in the same screenshot before pressing the final create button.
 
 ## Kaggle
 
@@ -70,7 +80,8 @@ Add one profile per app or website. Keep each profile short and operational: lau
   - Profile page with username.
   - Competitions/progression page showing solo/team/hosted counts.
 - Stop conditions: login prompt requiring credentials, CAPTCHA, account settings, API token creation/download, dataset upload/publish.
-- Notes: Viewed competition cards are not participation evidence.
+- Reusable lessons: viewed competition cards are not participation evidence.
+- Notes: Use visible count labels rather than inferred card lists when possible.
 
 ## Luogu
 
@@ -87,12 +98,14 @@ Add one profile per app or website. Keep each profile short and operational: lau
   - Login state or login requirement.
   - Problem page or submission/code page if accessible.
 - Stop conditions: username/password entry, GitHub/OAuth login requiring credentials, CAPTCHA, code submission, profile/security settings.
-- Notes: If the page shows `登录 / 注册`, private code history is unavailable until the user completes login.
+- Reusable lessons: if the page shows `登录 / 注册`, private code history is unavailable until the user completes login.
+- Notes: Never submit code without explicit confirmation.
 
 ## Adobe Premiere Pro
 
 - Launch: Start menu shortcut or direct `.lnk`/app launch. Wait longer than for browser workflows.
 - Stable landmarks: project window, import/media panel, timeline panel, export settings dialog, sequence name.
+- Interface strategy: for precise rendering, subtitles, trimming, normalization, or batch generation, prefer FFmpeg or scripts, then use Premiere for integration, inspection, and evidence screenshots.
 - Common actions:
   - Create/open project.
   - Import a media file through file dialog or drag/drop equivalent.
@@ -105,4 +118,5 @@ Add one profile per app or website. Keep each profile short and operational: lau
   - Timeline contains video/audio tracks.
   - Export settings show H.264, intended resolution, frame rate, and output path.
 - Stop conditions: missing media prompts, overwrite prompts, online sign-in/licensing prompts, destructive project changes, or export settings that do not match required deliverables.
-- Notes: For precise rendering, subtitles, trimming, normalization, or batch generation, prefer FFmpeg or scripts, then use Premiere for integration, inspection, and evidence screenshots.
+- Reusable lessons: Premiere launch and dialogs can be slow; wait for stable panels before clicking coordinates.
+- Notes: Record output path and export settings in the verification screenshot.

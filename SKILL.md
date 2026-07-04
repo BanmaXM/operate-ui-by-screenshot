@@ -1,14 +1,14 @@
 ---
 name: operate-ui-by-screenshot
-description: Operate desktop apps and websites through structured browser interfaces, DOM/HTML inspection, screenshots, visible UI state, clipboard paste, safe clicks, and verification screenshots. Use when the user asks Codex to control a GUI app, click buttons, open software, fill web forms, inspect web pages, scrape/capture HTML, use Edge or ChatGPT, operate Premiere or another desktop program, or document UI process screenshots where no direct API is available.
+description: Operate desktop apps and websites through structured browser interfaces, DOM/HTML inspection, UI Automation, screenshots, visible UI state, clipboard paste, safe clicks, verification screenshots, and reusable app/site operation notes. Use when Codex needs to control or inspect a GUI/web app, click buttons, open software, fill forms, scrape/capture HTML, test frontend UI, use Edge/ChatGPT/GitHub/Kaggle/Luogu/Premiere, document UI process screenshots, or summarize reusable lessons from a newly explored app/site where no direct API is enough.
 ---
 
 # Operate UI By Screenshot
 
-Use this skill to drive visible desktop or web interfaces with a cautious loop. For web pages, prefer structured page access before visual clicking:
+Use this skill to drive visible desktop or web interfaces with a cautious loop. It is not only a screenshot-clicking helper: for multimodal GUI/web agents, it is a reusable operating layer that combines structured interfaces, screenshots, visible state checks, and small app/site operation notes. For web pages, prefer structured page access before visual clicking:
 
 1. Inspect current state with a screenshot or window list.
-2. Prefer an API, CLI, MCP, browser DOM snapshot, HTML fetch, Playwright, or app-specific automation when available.
+2. Prefer an API, CLI, MCP, browser DOM snapshot, HTML fetch, Playwright, UI Automation, or app-specific automation when available.
 3. If GUI operation is required, use coordinates only after a screenshot confirms the target.
 4. Prefer clipboard paste for text, paths, prompts, and long form values.
 5. Verify after each meaningful action with another screenshot.
@@ -32,6 +32,8 @@ For Edge, ChatGPT, or any website, use this priority order:
 4. **Visible user Edge**: use screenshots, clipboard paste, and safe clicks when the existing logged-in browser state is needed.
 5. **Manual checkpoint**: stop for login, CAPTCHA, payment, account changes, permission prompts, or destructive actions.
 
+For known apps/sites, check `references/software-profiles.md` and load only the matching profile section.
+
 ## Core Loop
 
 1. **Bring target to foreground**: start the app or focus the existing window.
@@ -43,7 +45,7 @@ For Edge, ChatGPT, or any website, use this priority order:
    - Use keyboard shortcuts for standard operations such as `Ctrl+L`, `Ctrl+V`, `Enter`, `Ctrl+S`.
    - Use mouse coordinates only when the target is clearly visible and stable.
 5. **Verify**: capture another screenshot, compare it to the expected state, and continue or recover.
-6. **Record**: when process evidence matters, store screenshots with short ordered filenames.
+6. **Record**: when process evidence matters, store screenshots with short ordered filenames. When a new app/site workflow becomes reusable, summarize durable operation lessons instead of saving one-off coordinates.
 
 ## Page Health Checks
 
@@ -80,13 +82,25 @@ Recommended pattern on Windows:
 4. Capture a screenshot to verify text appeared.
 5. Press `Enter` or click submit only after the field is correct.
 
+## Reusable App/Site Lessons
+
+When a newly explored website or app becomes repeatable, add or propose a short profile update in `references/software-profiles.md`. Record only durable lessons:
+
+- stable landmarks and visible state labels;
+- best interface choice: API, CLI, HTML fetch, DOM, Playwright, CDP, UIA, or screenshot;
+- common safe actions and verification screenshots;
+- app/site-specific stop conditions;
+- recovery rules for overlays, scroll traps, disabled buttons, wrong zoom, stale state, or ambiguous modals.
+
+Do not record secrets, cookies, tokens, private user data, private screenshots, or one-off coordinates.
+
 ## References
 
 Load only the reference needed for the current target:
 
 - `references/windows-ui-recipes.md`: Windows screenshot, foreground, click, paste, key, and verification snippets.
 - `references/web-page-interfaces.md`: structured browser, HTML, DOM, assets, scraping, and Edge/CDP strategy.
-- `references/software-profiles.md`: maintained profiles for Edge/ChatGPT, GitHub, Kaggle, Luogu, and Adobe Premiere Pro, plus the format for adding more apps.
+- `references/software-profiles.md`: maintained profiles for Edge/ChatGPT, GitHub, Kaggle, Luogu, Adobe Premiere Pro, and the format for adding more app/site lessons.
 - `references/tooling-landscape.md`: when to use DOM, accessibility tree, UI Automation, image matching, or coordinates.
 - `references/maintenance.md`: how to update this skill after a new UI workflow is learned.
 
